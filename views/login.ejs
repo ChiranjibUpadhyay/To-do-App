@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  </head>
+  <body>
+    <div style="background-color:indigo;">
+      <img src="/css/images.png" width="200" height="74" style="float:left">
+      <h1 style="margin-right:10%; color:white;"> Welcome to Todo App </h1>
+   </div>
+    <% if(success){%>
+    <h1>Logged in Successfully!!</h1>
+    <a href="/insert">Get Started</a><br>
+    <%}
+    else{%>
+      <h3> You must have to log in first!!</h3>
+      <div class='whole'>
+      <%if(errors){%>
+        <ul style="list-style:none; text-align:left;" >
+          <% errors.forEach(function(item){%>
+            <li><%= item.msg %></li>
+          <%})%>
+            <li>Try again!</li>
+        </ul>
+      <%}%>
+        <form action='/' method='post'>
+          <div class='input'>
+            <label class='lab' for='username'>Username:&nbsp</label>
+            <input class='in' type="text" name='username' placeholder='Enter admin username'><br>
+            <label class='lab' for='password'>Password:&nbsp</label>
+            <input class='in' type="password" name='password' placeholder='Enter admin password'><br>
+        </div>
+          <input class='sub' type="submit" name="submit" value="Log In">
+        </form>
+      </div>
+    <%}%>
+  </body>
+</html>

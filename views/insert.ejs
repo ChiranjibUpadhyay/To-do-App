@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/css/style_insert.css">
+  </head>
+  <body>
+    <div style="background-color:indigo;">
+      <img src="/css/images.png" width="200" height="74">
+   </div>
+    <div class="insert">
+      <form action="/insert" method="post">
+        <input class="aa" type="text" name="item" placeholder="Enter the item to insert" value="<%=qs%>">
+        <input class="bb" type="submit" name="submit" value="<%=ps%>">
+      </form>
+    </div>
+    <div class="display">
+      <h2 style="text-align:left;margin-left:400px;"> Current Todos:</h2>
+      <ul style="text-align:left;margin-left:450px;">
+        <%Todolist.forEach(function(itm){
+          if(!itm.name){}
+          else{%>
+            <div class="data">
+              <li style="font-size: 20px;"><%= itm.name %></li>
+              <a href="/delete/<%=itm.name%>">Delete Item </a> &nbsp&nbsp&nbsp
+              <a href="/update/<%=itm.name%>">Update Item </a>
+              <br><br>
+            </div>
+          <%}
+        })%>
+      </ul>
+    </div>
+    <a href='/deleteall'>Delete All Todos</a> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <a href='/logout'>Log Out</a>
+  </body>
+</html>
