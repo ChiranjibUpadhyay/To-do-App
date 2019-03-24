@@ -1,6 +1,6 @@
 # To-do-App
 
-Todo App is developed using NodeJS and MongoDB in which first there is an admin login platform and after successful log in admin can add various items in his todo list. Also he can update or delete items accordingly. All the items currently available in the todolist are shown after each operation.
+Todo App is developed using NodeJS,Express and MongoDB in which first there is an admin login platform and after successful log in admin can add various items in his todo list. Also he can update or delete items accordingly. All the items currently available in the todolist are shown after each operation.
 
 So,basically this implements the CRUD(Create,Read,Update,Delete) operations.
 
