@@ -6,7 +6,8 @@ const expressSession=require('express-session');
 const mongoose=require('mongoose');
 const Schema=mongoose.Schema;
 
-mongoose.connect('mongodb://localhost:27017/todo',{useNewUrlParser: true});
+//mongoose.connect('mongodb://localhost:27017/todo',{useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.connection.on('open',function(eff){
   console.log("Connection Successful");
 })
